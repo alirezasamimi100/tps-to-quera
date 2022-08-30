@@ -17,7 +17,7 @@ mkdir Quera_Test/out
 
 if [[ -f checker/checker.cpp ]]
 then
-    echo "Checker found"
+    echo "Found checker"
     cp checker/checker.cpp Quera_Test/tester.cpp
 else
     echo "No checker"
@@ -62,18 +62,7 @@ fi
 
 rm -f mapping subtasks.json jc
 
-if [[ -f config.json && -f tester.cpp ]]
-then
-    zip -r Quera_Test.zip in out tester.cpp config.json
-elif [[ -f config.json ]]
-then
-    zip -r Quera_Test.zip in out config.json
-elif [[ -f tester.cpp ]]
-then
-    zip -r Quera_Test.zip in out tester.cpp
-else
-    zip -r Quera_Test.zip in out
-fi
+zip -r Quera_Test.zip *
 
 mv Quera_Test.zip ../Quera_Test.zip
 

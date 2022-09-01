@@ -56,11 +56,11 @@ cd Quera_Test
 if [[ -f mapping ]]
 then
     echo 'Building config.json'
-    g++ -O2 -std=c++17 -o jc ../jc.cpp
-    ./jc
+    g++ -O2 -std=c++17 -o BuildConfig ../BuildConfig.cpp
+    ./BuildConfig
 fi
 
-rm -f mapping subtasks.json jc
+rm -f mapping subtasks.json BuildConfig
 
 zip -r Quera_Test.zip *
 

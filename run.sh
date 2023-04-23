@@ -56,8 +56,7 @@ cd Quera_Test
 if [[ -f mapping ]]
 then
     echo 'Building config.json'
-    g++ -O2 -std=c++17 -o BuildConfig ../BuildConfig.cpp
-    ./BuildConfig
+    python3 ../build_config.py
 fi
 
 rm -f mapping subtasks.json BuildConfig

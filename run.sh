@@ -23,8 +23,6 @@ else
     echo "No checker"
 fi
 
-cnt=0
-
 TEST=tests/*.in
 cnt=0
 if [[ -f tests/mapping && -f subtasks.json ]]

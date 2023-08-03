@@ -44,8 +44,7 @@ do
     cp $o Quera_Test/out/output$cnt.txt
     if [[ -f Quera_Test/mapping ]]
     then
-        cat Quera_Test/mapping | sed s/$l/$cnt/ > Quera_Test/mapping.new
-        mv Quera_Test/mapping.new Quera_Test/mapping
+        sed -i "s/\b$l\b/$cnt/g" Quera_Test/mapping
     fi
 done
 
@@ -57,13 +56,12 @@ then
     python3 ../build_config.py
 fi
 
-rm -f mapping subtasks.json BuildConfig
+rm -f mapping subtasks.json
 
 zip -r Quera_Test.zip *
 
 mv Quera_Test.zip ../Quera_Test.zip
 
 cd ..
-
 
 echo "Finished!"
